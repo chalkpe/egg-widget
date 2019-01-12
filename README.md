@@ -11,6 +11,8 @@
 | 키 | 설명 |
 | -- | --- |
 | `plan` | 현재 요금제의 데이터 제공량 |
+| `color` | 그래프 색상 |
+| `precision` | 표시될 소수점 자릿수 |
 | `interval` | 새로고침 주기 (밀리초) |
 | `username` | 에그 관리자 계정명 |
 | `password` | 에그 관리자 계정 비밀번호 |
@@ -20,6 +22,8 @@
 ```json
 {
   "plan": "11gb",
+  "color": "#fb6149",
+  "precision": 2,
   "interval": 2500,
   "username": "user",
   "password": "info01234"

@@ -2,8 +2,9 @@ const bytes = require('bytes')
 const byteSize = require('byte-size')
 const {ipcRenderer} = require('electron')
 
-const {plan} = require('./config.json')
-const planBytes = bytes.parse(plan)
+const config = require('./config.json')
+const planBytes = bytes.parse(config.plan)
+const precision = parseInt(config.precision)
 
 const chart = document.getElementById('chart')
 const todayValue = document.getElementById('today-value')
@@ -24,21 +25,23 @@ function arc (cx, cy, r, sp, ep) {
 }
 
 ipcRenderer.on('data', (_, data) => {
+  console.debug(data)
+
   const stat = data.lte.statistics
   const totalBytes = parseInt(stat.TOTAL_TX_BYTES) + parseInt(stat.TOTAL_RX_BYTES)
   const todayBytes = parseInt(stat.daily.TOTAL_LTE_TX_BYTES) + parseInt(stat.daily.TOTAL_LTE_RX_BYTES)
 
-  const total = byteSize(totalBytes, { precision: 2 })
+  const total = byteSize(totalBytes, { precision })
   totalValue.textContent = parseFloat(total.value)
   totalUnit.textContent = total.unit
 
-  const today = byteSize(todayBytes, { precision: 2 })
+  const today = byteSize(todayBytes, { precision })
   todayValue.textContent = parseFloat(today.value)
   todayUnit.textContent = today.unit
 
   chart.innerHTML = `
-    <circle fill="#fff" r="80" cx="90" cy="90"></circle>
+    <circle fill="#fff" r="80" cx="90" cy="90" />
     <path fill="none" stroke="#d5d5d5" stroke-width="20" d="${arc(90, 90, 80, totalBytes / planBytes - 0.001, 1)}" />
-    <path fill="none" stroke="#fb6149" stroke-width="20" d="${arc(90, 90, 80, 0, totalBytes / planBytes)}" />
+    <path fill="none" stroke="${config.color}" stroke-width="20" d="${arc(90, 90, 80, 0, totalBytes / planBytes)}" />
   `
 })
