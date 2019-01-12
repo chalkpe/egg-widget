@@ -45,3 +45,6 @@ yarn install && yarn start
 ## 라이선스
 
 [MIT License](LICENSE)
+
+## 도와주신 분들
+* @Doro-nyong - [위젯 디자인](https://twitter.com/dnpfcltmdnjsdid/status/1083828614355767296)
