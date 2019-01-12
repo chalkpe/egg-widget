@@ -9,10 +9,8 @@ let ref = null
 async function createWindow() {
   read = await reader()
   window = new BrowserWindow({
-    alwaysOnTop: true,
-    width: 180, height: 180,
-    frame: false, transparent: true,
-    resizable: false, maximizable: false
+    alwaysOnTop: true, width: config.size, height: config.size,
+    transparent: true, frame: false, maximizable: false, resizable: false
   })
 
   window.loadFile('index.html')

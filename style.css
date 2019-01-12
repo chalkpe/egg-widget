@@ -19,20 +19,20 @@ main {
 }
 
 section + section {
-  margin-top: 10px;
+  margin-top: 5vw;
 }
 
 header {
-  font-size: 14px;
-  line-height: 10px;
+  font-size: 8vw;
+  line-height: 5vw;
 }
 
 article {
-  font-size: 22px;
+  font-size: 12vw;
 }
 
 article span:first-child {
-  margin-right: 2px;
+  margin-right: 1.5vw;
 }
 
 #chart {

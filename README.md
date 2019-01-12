@@ -10,6 +10,7 @@
 
 | 키 | 설명 |
 | -- | --- |
+| `size` | 위젯 크기 (픽셀) |
 | `plan` | 현재 요금제의 데이터 제공량 |
 | `color` | 그래프 색상 |
 | `precision` | 표시될 소수점 자릿수 |
@@ -21,6 +22,7 @@
 
 ```json
 {
+  "size": 180,
   "plan": "11gb",
   "color": "#fb6149",
   "precision": 2,
@@ -51,4 +53,4 @@ yarn install && yarn start
 [MIT License](LICENSE)
 
 ## 도와주신 분들
-* @Doro-nyong - [위젯 디자인](https://twitter.com/dnpfcltmdnjsdid/status/1083828614355767296)
+* [@Doro-nyong](https://github.com/Doro-nyong) - [위젯 디자인](https://twitter.com/dnpfcltmdnjsdid/status/1083828614355767296)

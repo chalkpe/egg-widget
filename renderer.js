@@ -25,8 +25,6 @@ function arc (cx, cy, r, sp, ep) {
 }
 
 ipcRenderer.on('data', (_, data) => {
-  console.debug(data)
-
   const stat = data.lte.statistics
   const totalBytes = parseInt(stat.TOTAL_TX_BYTES) + parseInt(stat.TOTAL_RX_BYTES)
   const todayBytes = parseInt(stat.daily.TOTAL_LTE_TX_BYTES) + parseInt(stat.daily.TOTAL_LTE_RX_BYTES)
@@ -40,8 +38,8 @@ ipcRenderer.on('data', (_, data) => {
   todayUnit.textContent = today.unit
 
   chart.innerHTML = `
-    <circle fill="#fff" r="80" cx="90" cy="90" />
-    <path fill="none" stroke="#d5d5d5" stroke-width="20" d="${arc(90, 90, 80, totalBytes / planBytes - 0.001, 1)}" />
-    <path fill="none" stroke="${config.color}" stroke-width="20" d="${arc(90, 90, 80, 0, totalBytes / planBytes)}" />
+    <circle fill="#fff" r="45" cx="50" cy="50" />
+    <path fill="none" stroke="#d5d5d5" stroke-width="10" d="${arc(50, 50, 45, totalBytes / planBytes - 0.001, 1)}" />
+    <path fill="none" stroke="${config.color}" stroke-width="10" d="${arc(50, 50, 45, 0, totalBytes / planBytes)}" />
   `
 })
