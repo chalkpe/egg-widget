@@ -1,0 +1,21 @@
+{
+  "name": "egg-widget",
+  "version": "1.0.0",
+  "description": "KT egg status widget built with Electron",
+  "main": "main.js",
+  "repository": "https://github.com/ChalkPE/egg-widget",
+  "author": "Chalk <chalkpe@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "btoa": "^1.2.1",
+    "byte-size": "^5.0.1",
+    "bytes": "^3.0.0",
+    "electron": "^4.0.1",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5"
+  }
+}

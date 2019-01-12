@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>egg-widget</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab">
+  </head>
+  <body>
+    <main>
+      <section>
+        <header>Today</header>
+        <article>
+          <span id="today-value"></span><span id="today-unit"></span>
+        </article>
+      </section>
+
+      <section>
+        <header>Total</header>
+        <article>
+          <span id="total-value"></span><span id="total-unit"></span>
+        </article>
+      </section>
+    </main>
+
+    <svg width="180" height="180" id="chart">
+      <circle fill="#d5d5d5" r="90" cx="90" cy="90"></circle>
+      <circle fill="#ffffff" r="70" cx="90" cy="90"></circle>
+    </svg>
+    <script src="renderer.js"></script>
+  </body>
+</html>
